@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@astrojs/check": "0.9.4",
+    "@astrojs/node": "9.4.3",
+    "@astrojs/preact": "4.1.0",
+    "@astrojs/rss": "4.0.12",
+    "@astrojs/sitemap": "3.5.1",
+    "@astrojs/tailwind": "6.0.2",
+    "@deno/astro-adapter": "^0.2.0",
+    "@divriots/jampack": "^0.24.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/react": "^18.3.11",
+    "astro": "5.13.5",
+    "astro-navbar": "^2.3.2",
+    "astro-seo": "^0.8.3",
+    "fuse.js": "^7.0.0",
+    "github-slugger": "^2.0.0",
+    "gray-matter": "^4.0.3",
+    "preact": "^10.24.3",
+    "react-dom": "^18.3.1",
+    "remark-collapse": "^0.1.2",
+    "remark-toc": "^9.0.0",
+    "satori": "^0.10.13",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.3"
+  }
+}

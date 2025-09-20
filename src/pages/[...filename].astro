@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import PostDetails from "../layouts/PostDetails.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const postResult = posts.map(post => {
+    console.log(post.id);
+    return { params: { filename: "blog/" + post.id }, props: { post } };
+  });
+  return [...postResult];
+}
+
+const { post } = Astro.props;
+
+if (!post) {
+  Astro.response.status = 404;
+  Astro.response.statusText = 'Not found';
+}
+---
+
+<PostDetails post={post} />

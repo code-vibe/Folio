@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "install": "deno install --allow-scripts",
+    "build": "astro build",
+    "start": "astro dev",
+    "deploy-build": "deno install -r --allow-scripts=npm:sharp@0.33.5,npm:@swc/core@1.9.1 || true && deno install -r --allow-scripts=npm:sharp@0.33.5,npm:@swc/core@1.9.1   && astro build",
+    "preview" : "deno run -A dist/server/entry.mjs",
+    "check" : "deno lint src/ && deno fmt src/ --check"
+  },
+  "fmt": {
+    "exclude": ["src/content/"]
+  }
+}
+

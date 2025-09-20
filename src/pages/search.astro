@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import { SITE } from "../config";
+import Layout from "../layouts/Layout.astro";
+import Main from "../layouts/Main.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SearchComponent from "../components/Search.tsx";
+
+// Retrieve all articles
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+const notes = await getCollection("til");
+
+// List of items to search in
+const postSearchList = posts.map(({ data }) => ({
+  title: data.title,
+  description: data.description,
+  data,
+  type: "posts" as "posts" | "notes"
+}));
+const noteSearchList = notes.map(({ data }) => ({
+  title: data.title,
+  description: data.description,
+  data,
+  type: "notes"  as "posts" | "notes"
+}));
+
+const searchList = postSearchList.concat(noteSearchList);
+---
+
+<Layout title={`Search | ${SITE.title}`}>
+  <Header activeNav="search" />
+  <Main pageTitle="Search" pageDesc="Search any article ...">
+    <SearchComponent client:load searchList={searchList} />
+  </Main>
+  <Footer />
+</Layout>
