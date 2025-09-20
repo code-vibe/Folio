@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "deno task build",
+    "deploy-build": "deno task deploy-build"
+  },
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@astrojs/node": "9.4.3",
