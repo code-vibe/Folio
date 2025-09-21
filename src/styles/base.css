@@ -12,6 +12,7 @@
     --color-card-muted: 205, 205, 205;
     --color-border: 249, 89, 19;
   }
+
   html[data-theme="dark"] {
     --color-fill: 33, 39, 55;
     --color-text-base: 234, 237, 243;
@@ -20,42 +21,52 @@
     --color-card-muted: 138, 51, 2;
     --color-border: 171, 75, 8;
   }
+
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
     display: none;
   }
+
   #moon-svg,
   html[data-theme="dark"] #sun-svg {
     display: block;
   }
+
   #light-svg-logo,
   html[data-theme="light"] #dark-svg-logo {
     display: none;
   }
+
   #dark-svg-logo,
   html[data-theme="light"] #light-svg-logo {
     display: block;
   }
+
   body {
     @apply flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base
       selection:bg-skin-accent selection:bg-opacity-70
       selection:text-skin-inverted;
   }
+
   section,
   footer {
     @apply mx-auto max-w-4xl px-4;
   }
+
   a {
     @apply outline-2 outline-offset-1 outline-skin-fill
       focus-visible:no-underline focus-visible:outline-dashed;
   }
+
   svg {
     @apply inline-block h-6 w-6 fill-skin-base group-hover:fill-skin-accent;
   }
+
   svg.icon-tabler {
     @apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current
       stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110;
   }
+
   .prose {
     @apply prose-headings:!mb-3 prose-headings:!text-skin-base prose-h3:italic
       prose-p:!text-skin-base prose-a:!text-skin-base prose-a:!decoration-dashed
@@ -63,57 +74,94 @@
       prose-blockquote:!border-l-skin-accent prose-blockquote:border-opacity-50
       prose-blockquote:opacity-80 prose-figcaption:!text-skin-base
       prose-figcaption:opacity-70 prose-strong:!text-skin-base
-      prose-code:rounded prose-code:bg-skin-card prose-code:bg-opacity-75
-      prose-code:p-1 prose-code:!text-skin-base prose-code:before:!content-[""]
-      prose-code:after:!content-[""] prose-pre:!text-skin-base
       prose-ol:!text-skin-base prose-ul:overflow-x-clip prose-ul:!text-skin-base
       prose-li:marker:!text-skin-accent prose-table:text-skin-base
       prose-th:border prose-th:border-skin-line prose-td:border
       prose-td:border-skin-line prose-img:mx-auto prose-img:!mt-2
       prose-hr:!border-skin-line;
   }
+
   .prose a {
     @apply hover:!text-skin-accent;
   }
+
   .prose thead th:first-child,
   tbody td:first-child,
   tfoot td:first-child {
     padding-left: 0.5714286em;
   }
+
   .prose h2#table-of-contents {
     @apply mb-2;
   }
+
   .prose details {
     @apply inline-block cursor-pointer select-none text-skin-base;
   }
+
   .prose summary {
     @apply focus-outline;
   }
+
   .prose h2#table-of-contents + p {
     @apply hidden;
   }
 
-  /* ===== scrollbar ===== */
+  /* ===== Light theme inline code ===== */
+  html[data-theme="light"] .prose code {
+    background-color: #f5f5f5 !important;
+    color: #000000 !important;
+    border: 1px solid #d1d5db !important;
+    padding: 0.25rem 0.375rem;
+    border-radius: 0.25rem;
+    font-family: monospace;
+    font-size: 0.875rem;
+  }
+
+  /* ===== Light theme full code blocks ===== */
+  html[data-theme="light"] .prose pre {
+    background-color: #f9fafb !important;
+    color: #000000 !important;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    font-family: monospace;
+    overflow-x: auto;
+  }
+
+  /* Remove inner span backgrounds from Tailwind typography */
+  html[data-theme="light"] .prose pre code {
+    background-color: transparent !important;
+    color: inherit !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  /* ===== Dark theme (unchanged) ===== */
+  html[data-theme="dark"] .prose code {
+    @apply bg-skin-card bg-opacity-10 text-skin-base rounded px-1.5 py-0.5 font-mono text-sm;
+  }
+
+  html[data-theme="dark"] .prose pre {
+    @apply bg-skin-card text-skin-base rounded p-4 overflow-x-auto font-mono;
+  }
+
+  /* ===== Scrollbar ===== */
   html {
     overflow-y: scroll;
   }
 
-  /* width */
   ::-webkit-scrollbar {
     @apply w-3;
   }
 
-  /* Track */
   ::-webkit-scrollbar-track {
     @apply bg-skin-fill;
   }
 
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     @apply bg-skin-card;
   }
 
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-skin-card-muted;
   }
@@ -132,19 +180,24 @@
 footer {
   @apply w-full;
 }
+
 .footer-wrapper {
   @apply flex flex-col items-center justify-between py-6 sm:flex-row-reverse
     sm:py-4;
 }
+
 .link-button {
   @apply my-1 p-2 hover:rotate-6;
 }
+
 .link-button svg {
   @apply scale-125;
 }
+
 .copyright-wrapper {
   @apply my-2 flex flex-col items-center whitespace-nowrap sm:flex-row;
 }
+
 .separator {
   @apply hidden sm:inline;
 }
