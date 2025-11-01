@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2025-01-30
-title:The Lost Art Of Thinking In The Age Of AI
-postSlug: Ai
+title: "The Lost Art Of Thinking In The Age Of AI"
+postSlug: "Ai"
 tags:
   - AI
   - Engineering
@@ -10,7 +10,7 @@ tags:
 description: "A reflective piece on how developers are losing the discipline of deep thinking in the age of AI, urging readers to stay the architects of their ideas while letting AI assist with execution, not replace human understanding."
 ---
 
-ngineers are known for solving problems through structured reasoning and applied systems thinking. But that seems to be fading.  
+Engineers are known for solving problems through structured reasoning and applied systems thinking. But that seems to be fading.  
 
 Something subtle is happening in tech.  
 Developers aren’t thinking anymore, they’re prompting.  
@@ -24,7 +24,7 @@ We are witnessing a quiet erosion of depth.
 
 ## Outsourcing Your Thought
 
-AI is not the problem. Overdependence is.  
+AI is not the problem. Over dependence is.  
 
 Developers are beginning to outsource the most human part of the craft *the thinking.*  
 Instead of understanding *why* a system behaves a certain way, they accept AI’s suggestion as truth. Instead of reasoning through architecture, they delegate design to a model that has no context, responsibility, or intuition.  
